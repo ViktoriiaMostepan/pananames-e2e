@@ -1,0 +1,22 @@
+services:
+  tests:
+    image: pananames-e2e:local
+    build: .
+    init: true
+    ipc: host
+    env_file:
+      - .env
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+
+  report:
+    image: pananames-e2e:local
+    build: .
+    profiles: [tools]
+    init: true
+    command: [npx, playwright, show-report, playwright-report, --host, 0.0.0.0, --port, '9323']
+    ports:
+      - '127.0.0.1:9323:9323'
+    volumes:
+      - ./playwright-report:/app/playwright-report:ro

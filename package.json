@@ -1,0 +1,23 @@
+{
+  "name": "pananames-e2e",
+  "version": "1.0.0",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:list": "playwright test --list",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Playwright end-to-end tests for PanaNames contacts and domain cart",
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.5.0",
+    "dotenv": "17.4.2",
+    "typescript": "7.0.2"
+  },
+  "private": true
+}
